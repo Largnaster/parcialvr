@@ -1,0 +1,33 @@
+{
+  "name": "parcial3",
+  "version": "1.0.0",
+  "description": "Pagina con aframe",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node app.js --exec",
+    "dev": "nodemon app.js",
+    "devbabel": "nodemon app.js --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Largnaster/parcialvr.git"
+  },
+  "keywords": [
+    "Aframe"
+  ],
+  "author": "Bryann Torres",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Largnaster/parcialvr/issues"
+  },
+  "homepage": "https://github.com/Largnaster/parcialvr#readme"
+}
