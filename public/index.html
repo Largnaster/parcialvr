@@ -13,54 +13,173 @@
   <body>
     <!-- Logica de la app -->
     <script>
-      AFRAME.registerComponent("log", {
-        init: function() {
-          var sceneEl = document.querySelector("a-scene");
-          var theSky = sceneEl.querySelector("a-sky");
+      AFRAME.registerComponent("detail", {
+        init: function () {
           var data = this.data;
           var el = this.el; // plano seleccionado
           var source = "";
-          var actualSky = "";
 
-          el.addEventListener("click", function() {
+          el.addEventListener("click", function () {
             source = el.getAttribute("src");
-            actualSky = theSky.getAttribute("src");
-            theSky.setAttribute("src", source);
-            el.setAttribute("src", actualSky);
+            alert(data);
           });
-        }
+        },
       });
     </script>
-    <a-scene>
+    <a-scene loading-screen="dotsColor: red; backgroundColor: black" >
       <!-- Agregar los recursos para la aplicacion -->
       <!-- https://svs.gsfc.nasa.gov/4851 -->
       <a-assets>
         <!-- Imagenes para el cielo y constelaciones -->
-        <img id="sky" src="./images/starmap_2020.jpg" >
-        <img id="bounds" src="./images/constellation_bounds.png" >
-        <img id="figures" src="./images/constellation_figures.png" >
+        <img id="sky" src="./images/starmap_2020.jpg" />
+        <img id="bounds" src="./images/constellation_bounds.png" />
+        <img id="figures" src="./images/constellation_figures.png" />
         <!-- Otra -->
       </a-assets>
       <!-- Agregar cielo a la escena -->
-      <a-sky src="#sky" radius="100" ></a-sky>
-      <a-sky src="#bounds" transparent="true" radius="98" ></a-sky>
-      <a-sky src="#figures" transparent="true" radius="97" ></a-sky>
+      <a-sky src="#sky" radius="100"></a-sky>
+      <a-sky src="#bounds" transparent="true" radius="98"></a-sky>
+      <a-sky src="#figures" transparent="true" radius="97"></a-sky>
       <!-- Agregar objetos a la escena -->
       <!-- <a-sphere
         position="0 0.85 -5"
         radius="0.2"
         color="#EFEFEF"
       ></a-sphere> -->
-      <a-text value="Virgo" position="9 2 -5" rotation="0 -60 0">
-        <a-plane
-          width="1"
-          height="0.35"
-          material="color: black; opacity: 0.35"
-          position="0 0 0"
-        ></a-plane>
-      </a-text>
+      <!-- Aries -->
+      <a-plane
+        width="2.5"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="-9 5 8"
+        rotation="0 130 0"
+        detail="aries"
+      >
+        <a-text value="Aries" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Tauro -->
+      <a-plane
+        width="2.2"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="-4 5.5 11.3"
+        rotation="0 160 0"
+        detail="tauro"
+      >
+        <a-text value="Tauro" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Geminis -->
+      <a-plane
+        width="3"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="4 6 11.3"
+        rotation="0 -170 0"
+        detail="geminis"
+      >
+        <a-text value="Geminis" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Cancer -->
+      <a-plane
+        width="2.7"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="8 5 9"
+        rotation="0 -150 0"
+        detail="cancer"
+      >
+        <a-text value="Cancer" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Leo -->
+      <a-plane
+        width="1.5"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="11 4 4.8"
+        rotation="0 -120 0"
+        detail="leo"
+      >
+        <a-text value="Leo" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+        <!-- Virgo -->
+      <a-plane
+        width="2.3"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="11 0 -4.8"
+        rotation="0 -60 0"
+        detail="virgo"
+      >
+        <a-text value="Virgo" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Libra -->
+      <a-plane
+        width="2.5"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="8 -4 -9"
+        rotation="0 -40 0"
+        detail="libra"
+      >
+        <a-text value="Libra" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Escorpio -->
+      <a-plane
+        width="3.3"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="4 -8 -11.3"
+        rotation="0 -10 0"
+        detail="escorpio"
+      >
+        <a-text value="Escorpio" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Sagitario -->
+      <a-plane
+        width="3.5"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="-3 -5.5 -11.6"
+        rotation="0 10 0"
+        detail="sagitario"
+      >
+        <a-text value="Sagitario" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Capricornio -->
+      <a-plane
+        width="4.2"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="-9 -4 -8"
+        rotation="0 40 0"
+        detail="capricornio"
+      >
+        <a-text value="Capricornio" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Acuario -->
+      <a-plane
+        width="3"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="-11.5 -2 -3.4"
+        rotation="0 70 0"
+        detail="acuario"
+      >
+        <a-text value="Acuario" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
+      <!-- Piscis -->
+      <a-plane
+        width="2.2"
+        height="1"
+        material="color: black; opacity: 0.35"
+        position="-11.5 2.5 3.4"
+        rotation="0 95 0"
+        detail="piscis"
+      >
+        <a-text value="Piscis" position="0 0 0" align="center" width="18" ></a-text>
+      </a-plane>
       <!-- Agregar el cursor -->
-      <a-camera>
+      <a-camera look-controls wasd-controls="enabled: false" far="120" position="0 0 0" >
         <a-cursor
           id="cursor"
           color="white"
